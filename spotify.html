@@ -1,0 +1,159 @@
+<!DOCTYPE html>  
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Musical World</title>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+  background:linear-gradient(160deg,#0f0c29,#302b63,#24243e);
+  min-height:100vh;
+  color:#fff;
+  font-family:Arial,Helvetica,sans-serif;
+  overflow-x:hidden;
+  position:relative;
+}
+h1{
+  font-family:'Pacifico',cursive;
+  font-size:3rem;
+  text-align:center;
+  margin-top:30px;
+  color:#ffb6c1;
+  text-shadow:0 0 15px #ff69b4,0 0 30px #ff69b4;
+}
+h2{
+  text-align:center;
+  margin-bottom:40px;
+  color:#ffe4e1;
+  font-size:1.2rem;
+}
+.playlists{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:30px;
+  padding:20px 40px 60px;
+}
+.playlist{
+  background:rgba(255,255,255,0.1);
+  border-radius:15px;
+  padding:15px;
+  box-shadow:0 0 15px rgba(255,105,180,0.6);
+  backdrop-filter:blur(6px);
+  transition:transform 0.3s;
+}
+.playlist:hover{
+  transform:scale(1.05);
+  box-shadow:0 0 25px rgba(255,182,193,0.9);
+}
+.playlist iframe{
+  width:100%;
+  height:380px;
+  border:none;
+  border-radius:10px;
+}
+/* Star ambiance */
+.stars{
+  width:2px;height:2px;background:#fff;
+  position:absolute;border-radius:50%;
+  animation:twinkle 2s infinite ease-in-out alternate;
+}
+@keyframes twinkle{
+  from{opacity:0.3;transform:scale(0.8);}
+  to{opacity:1;transform:scale(1.2);}
+}
+/* 🔙 Back button */
+.backBtn{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  width:60px;
+  height:60px;
+  border-radius:50%;
+  background:#ff4d4d;
+  color:#fff;
+  font-size:2rem;
+  font-weight:bold;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-decoration:none;
+  box-shadow:0 0 15px rgba(255,0,0,0.6);
+  transition:transform 0.3s, background 0.3s;
+  z-index:9999;
+}
+.backBtn:hover{
+  background:#ff1a1a;
+  transform:scale(1.1);
+}
+</style>
+</head>
+<body>
+
+<h1>Musical World</h1>
+<h2>Curated with melody for you ✨🎶</h2>
+
+<div class="playlists">
+  <div class="playlist">
+    <iframe style="border-radius:12px"
+      src="https://open.spotify.com/embed/playlist/1S4rrxAR5odHlPpQrfoiQO?utm_source=generator"
+      allowfullscreen
+      loading="lazy">
+    </iframe>
+  </div>
+  <div class="playlist">
+    <iframe data-testid="embed-iframe"
+      style="border-radius:12px"
+      src="https://open.spotify.com/embed/playlist/1vGPYywpVTa9KuneVNuOn5?utm_source=generator"
+      width="100%"
+      height="352"
+      frameborder="0"
+      allowfullscreen=""
+      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+      loading="lazy">
+    </iframe>
+  </div>
+  <div class="playlist">
+    <iframe data-testid="embed-iframe"
+      style="border-radius:12px"
+      src="https://open.spotify.com/embed/playlist/5h3ykANOVM8E4w2vIV9avv?utm_source=generator"
+      width="100%"
+      height="352"
+      frameborder="0"
+      allowfullscreen=""
+      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+      loading="lazy">
+    </iframe>
+  </div>
+  <div class="playlist">
+    <iframe data-testid="embed-iframe"
+      style="border-radius:12px"
+      src="https://open.spotify.com/embed/playlist/0sb2qsWUEfEVidCkTCmuMy?utm_source=generator"
+      width="100%"
+      height="352"
+      frameborder="0"
+      allowfullscreen=""
+      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+      loading="lazy">
+    </iframe>
+  </div>
+</div>
+
+<!-- 🔙 Back to Mystic Falls page -->
+<a href="index.html" class="backBtn">&#8592;</a>
+
+<script>
+// Create stars for the ambiance
+for(let i=0;i<120;i++){
+  const star=document.createElement('div');
+  star.classList.add('stars');
+  star.style.top=Math.random()*100+'vh';
+  star.style.left=Math.random()*100+'vw';
+  star.style.animationDuration=(Math.random()*2+1)+'s';
+  document.body.appendChild(star);
+}
+</script>
+
+</body>
+</html>
