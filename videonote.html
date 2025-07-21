@@ -1,0 +1,224 @@
+<!DOCTYPE html>  
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Video Diary – Samridhi</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:#fff8e7;color:#4b3d2a;font-family:Arial, sans-serif;}
+a{text-decoration:none;color:inherit;}
+
+/* PASSWORD SCREEN */
+#password-screen{
+  position:fixed;top:0;left:0;width:100%;height:100%;
+  background:linear-gradient(to bottom,#fff8e7,#f6e6b4);
+  display:flex;flex-direction:column;justify-content:center;align-items:center;
+  z-index:9999;
+}
+#password-screen h1{
+  font-family:'Cinzel Decorative',serif;
+  font-size:2rem;margin-bottom:20px;color:#4b3d2a;
+}
+#password-screen input{
+  padding:10px;font-size:1rem;margin-bottom:10px;
+  border:2px solid #d9a441;border-radius:4px;
+}
+#password-screen button{
+  background:#d9a441;color:#fff;border:none;padding:10px 20px;font-size:1rem;
+  border-radius:4px;cursor:pointer;
+}
+#password-screen button:hover{background:#b88522;}
+
+#main-content{display:none;}
+
+/* NAVBAR */
+nav{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:15px 40px;background:#f6e6b4;
+  position:sticky;top:0;z-index:10;
+}
+nav .logo{font-family:'Cinzel Decorative',serif;font-size:1.8rem;letter-spacing:2px;color:#4b3d2a;}
+nav button{
+  background:#d9a441;color:#fff;border:none;padding:8px 16px;border-radius:4px;cursor:pointer;
+}
+nav button:hover{background:#b88522;}
+
+/* HERO SECTION */
+.hero{
+  position:relative;
+  background:url("https://i.ibb.co/8Jpmbrt/collage.jpg") center/cover no-repeat;
+  height:80vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color:#fff;
+}
+.hero h1{
+  font-family:'Cinzel Decorative',serif;
+  font-size:3rem;
+  text-shadow:0 0 10px rgba(0,0,0,0.6);
+}
+
+/* GRID SECTION (videos like cards) */
+.packages{
+  background:#fff8e7;
+  padding:60px 40px;
+  text-align:center;
+}
+.packages h2{
+  font-size:2rem;
+  font-family:'Cinzel Decorative',serif;
+  margin-bottom:40px;
+}
+.video-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:30px;
+}
+.video-card{
+  background:#fff4d1;
+  border-radius:8px;
+  overflow:hidden;
+  box-shadow:0 4px 8px rgba(0,0,0,0.1);
+  transition:transform .3s;
+}
+.video-card:hover{transform:scale(1.03);}
+.video-card iframe{
+  width:100%;aspect-ratio:16/9;border:none;
+}
+.video-card p{
+  padding:10px;font-size:1rem;
+}
+
+/* MESSAGE SECTION */
+.message{
+  padding:60px 20px;
+  background:#f6e6b4;
+  text-align:center;
+}
+.message h3{
+  font-size:1.6rem;
+  margin-bottom:20px;
+}
+.message p{
+  font-size:1.1rem;
+  max-width:800px;
+  margin:0 auto;
+  line-height:1.6;
+}
+
+/* FOOTER */
+footer{
+  background:#e6d28a;
+  text-align:center;
+  padding:20px;
+  font-size:0.9rem;
+  color:#4b3d2a;
+}
+</style>
+</head>
+<body>
+
+<!-- PASSWORD SCREEN -->
+<div id="password-screen">
+  <h1>Enter Password to Access Video Diary</h1>
+  <input type="password" id="passwordInput" placeholder="Password">
+  <button onclick="checkPassword()">Enter</button>
+</div>
+
+<!-- MAIN CONTENT -->
+<div id="main-content">
+  <nav>
+    <div class="logo">VIDEO DIARY</div>
+    <!-- ✅ Logout button links back to index.html -->
+    <button id="logoutBtn">Log Out</button>
+  </nav>
+
+  <section class="hero">
+    <h1>Explore The Memories</h1>
+  </section>
+
+  <section class="packages">
+    <h2>Our Video Diary</h2>
+    <div class="video-grid">
+      <div class="video-card">
+        <iframe src="https://www.youtube.com/embed/p83re97ambw" allowfullscreen></iframe>
+        <p>VD 1</p>
+      </div>
+      <div class="video-card">
+        <iframe src="https://www.youtube.com/embed/_kgY8p3SMzA" allowfullscreen></iframe>
+        <p>VD 2</p>
+      </div>
+      <div class="video-card">
+        <iframe src="https://www.youtube.com/embed/CUbRxdRs8Ds" allowfullscreen></iframe>
+        <p>VD 3</p>
+      </div>
+      <div class="video-card">
+        <iframe src="https://www.youtube.com/embed/riH5EHXTgRQ" allowfullscreen></iframe>
+        <p>VD 4</p>
+      </div>
+      <div class="video-card">
+        <iframe src="https://www.youtube.com/embed/fe6OD0yUL6Q" allowfullscreen></iframe>
+        <p>VD 5</p>
+      </div>
+      <div class="video-card">
+        <iframe src="https://www.youtube.com/embed/QBCM0J30StQ" allowfullscreen></iframe>
+        <p>VD 6</p>
+      </div>
+      <div class="video-card">
+        <iframe src="https://www.youtube.com/embed/kTWcZyOI8Bk" allowfullscreen></iframe>
+        <p>VD 7</p>
+      </div>
+      <div class="video-card">
+        <iframe src="https://www.youtube.com/embed/SyWPUN-opXY" allowfullscreen></iframe>
+        <p>VD 8</p>
+      </div>
+      <div class="video-card">
+        <iframe src="https://www.youtube.com/embed/UNYZQDSLYEU" allowfullscreen></iframe>
+        <p>VD 9</p>
+      </div>
+      <div class="video-card">
+        <iframe src="https://www.youtube.com/embed/7OUwgF4Njvs" allowfullscreen></iframe>
+        <p>VD 10</p>
+      </div>
+      <div class="video-card">
+        <iframe src="https://www.youtube.com/embed/2KeHu8HqtC4" allowfullscreen></iframe>
+        <p>VD 11</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="message">
+    <h3>Happy Birthday Samridhi!!</h3>
+    <p>
+      This is how we feel around you. Each of us hold a piece of you – your laughter, warmth, madness, care and magic.
+    </p>
+  </section>
+
+  <footer>
+    &copy; 2025 Video Diary
+  </footer>
+</div>
+
+<script>
+function checkPassword(){
+  const input = document.getElementById('passwordInput').value;
+  if(input === 'achabete'){ // ✅ password
+    document.getElementById('password-screen').style.display = 'none';
+    document.getElementById('main-content').style.display = 'block';
+  } else {
+    alert('Incorrect Password!');
+  }
+}
+
+// ✅ Log out button now redirects to index.html
+document.getElementById('logoutBtn').onclick = function(){
+  window.location.href = "index.html";
+};
+</script>
+
+</body>
+</html>
